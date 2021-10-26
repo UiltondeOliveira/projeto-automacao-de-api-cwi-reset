@@ -1,22 +1,22 @@
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AllTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\tests\GetBookingTest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\tests\GetPingTest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\utils\Utils.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\AllTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\tests\PutBookingTest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\requests\payloads\AuthPayloads.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\ContractTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SecurityTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\base\BaseTest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\requests\PostAuthRequest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\SecurityTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\requests\GetPingRequest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SmokeTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\ContractTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AcceptanceTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\GetBookingRequest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\SmokeTests.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\PutBookingRequest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\tests\PostAuthTest.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\payloads\BookingPayloads.java
-D:\Workspace\CWI Reset Level 2\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\AcceptanceTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\AcceptanceTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\tests\PutBookingTest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\tests\GetBookingTest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\requests\PostAuthRequest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\payloads\BookingPayloads.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AllTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SmokeTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\GetBookingRequest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\ContractTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AcceptanceTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\tests\GetPingTest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\AllTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\SecurityTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\SmokeTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\tests\PostAuthTest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\ContractTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\PutBookingRequest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\utils\Utils.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\auth\requests\payloads\AuthPayloads.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SecurityTests.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\requests\GetPingRequest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\base\BaseTest.java

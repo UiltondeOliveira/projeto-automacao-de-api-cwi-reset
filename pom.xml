@@ -28,7 +28,6 @@
         <skipITs>true</skipITs>
         <skipTests>false</skipTests>
         <skipUTs>${skipTests}</skipUTs>
-        <surefire.groups></surefire.groups>
     </properties>
     <dependencies>
         <dependency>
