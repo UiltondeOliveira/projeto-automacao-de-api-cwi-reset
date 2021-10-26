@@ -19,4 +19,6 @@ public class PutBookingRequest {
                 .body(bookingPayloads.payloadValidBooking().toString())
                 .put("booking/"+ id);
     }
+
+
 }

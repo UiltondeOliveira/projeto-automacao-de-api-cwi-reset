@@ -4,6 +4,7 @@ import br.com.restassuredapitesting.base.BaseTest;
 import br.com.restassuredapitesting.suites.AcceptanceTests;
 import br.com.restassuredapitesting.suites.AllTests;
 import br.com.restassuredapitesting.suites.ContractTests;
+import br.com.restassuredapitesting.tests.booking.payloads.BookingPayloads;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
 import br.com.restassuredapitesting.utils.Utils;
 import io.qameta.allure.Feature;
@@ -14,6 +15,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
+import java.util.Date;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static org.hamcrest.Matchers.greaterThan;
@@ -77,4 +79,57 @@ public class GetBookingTest extends BaseTest {
                 .statusCode(200)
                 .body(matchesJsonSchema(new File(Utils.getSchemaBasePath("booking","booking"))));
     }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Category({AllTests.class, AcceptanceTests.class})
+    public void validaListagemDeReservasComFiltroFirstname(){
+        String firstName = "James";
+
+        getBookingRequest.bookingListReturnIdsFilteredForFirstname(firstName)
+                .then()
+                .statusCode(200)
+                .body("size()", greaterThan(0));
+
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Category({AllTests.class, AcceptanceTests.class})
+    public void validaListagemDeReservasComFiltroLastname(){
+        String lastName = "Brown";
+
+        getBookingRequest.bookingListReturnIdsFilteredForLastname(lastName)
+                .then()
+                .statusCode(200)
+                .body("size()",greaterThan(0));
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Category({AllTests.class, AcceptanceTests.class})
+    public void validaListagemDeReservasComFiltroCheckin(){
+        String dateCheckin = "2021-04-14";
+        getBookingRequest.bookingListReturnIdsFilteredCheckin(dateCheckin)
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("size()",greaterThan(0));
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Category({AllTests.class, AcceptanceTests.class})
+    public void validaListagemDeReservasComFiltroCheckout(){
+        String dateCheckout = "2021-05-14";
+        getBookingRequest.bookingListReturnIdsFilteredCheckout(dateCheckout)
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("size()",greaterThan(0));
+    }
+
+
+
+
 }
