@@ -1,6 +1,7 @@
 package br.com.restassuredapitesting.tests.booking.tests;
 
 import br.com.restassuredapitesting.base.BaseTest;
+import br.com.restassuredapitesting.suites.AcceptanceTests;
 import br.com.restassuredapitesting.suites.AllTests;
 import br.com.restassuredapitesting.suites.ContractTests;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
@@ -24,10 +25,26 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class})
+    @Category({AllTests.class, AcceptanceTests.class})
     @DisplayName("Listar Ids de reservas")
     public void validaListagemDeIdsDasReservas(){
         getBookingRequest.bookingReturnIds()
+                .then()
+                .statusCode(200)
+                .body("size()", greaterThan(0));
+    }
+
+    @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Category({AllTests.class, AcceptanceTests.class})
+    public void validaReservaEspecifica(){
+        int firstId = getBookingRequest.bookingReturnIds()
+                .then()
+                .statusCode(200)
+                .extract()
+                .path("[0].bookingid");
+
+        getBookingRequest.bookingReturnSpecificId(firstId)
                 .then()
                 .statusCode(200)
                 .body("size()", greaterThan(0));

@@ -6,6 +6,7 @@ F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\r
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AllTests.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SmokeTests.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\GetBookingRequest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\tests\DeleteBookingTest.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\ContractTests.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\suites\AcceptanceTests.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\tests\GetPingTest.java
@@ -20,3 +21,4 @@ F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\r
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\runners\SecurityTests.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\ping\requests\GetPingRequest.java
 F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\base\BaseTest.java
+F:\Workspace\CWI-RESET\projeto-automacao-de-api-cwi-reset\src\test\java\br\com\restassuredapitesting\tests\booking\requests\DeleteBookingRequest.java
