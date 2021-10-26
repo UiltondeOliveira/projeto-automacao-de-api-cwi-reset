@@ -1,6 +1,7 @@
 package br.com.restassuredapitesting.tests.booking.requests;
 
 import br.com.restassuredapitesting.tests.booking.payloads.BookingPayloads;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -8,6 +9,7 @@ import static io.restassured.RestAssured.given;
 public class PutBookingRequest {
     BookingPayloads bookingPayloads = new BookingPayloads();
 
+@Step("Atualiza uma reserva específica utilizando o parâmetro token")
     public Response updateBookingToken(int id, String token){
         return given()
                 .header("Content-Type","application/json")

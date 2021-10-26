@@ -9,7 +9,6 @@ import org.junit.runners.Suite;
 @Categories.IncludeCategory(br.com.restassuredapitesting.suites.SecurityTests.class)
 @Suite.SuiteClasses({
 
-
 })
 
 public class SecurityTests {
