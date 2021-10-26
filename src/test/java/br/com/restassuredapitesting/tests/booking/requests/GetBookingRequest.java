@@ -15,4 +15,11 @@ public class GetBookingRequest {
                 .when()
                 .get("booking");
     }
+
+    @Step("Retorna uma reserva específica")
+    public Response bookingReturnSpecificId(int id){
+        return given()
+                .when()
+                .get("booking/" + id);
+    }
 }

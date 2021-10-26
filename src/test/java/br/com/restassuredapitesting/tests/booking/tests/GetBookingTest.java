@@ -43,4 +43,21 @@ public class GetBookingTest extends BaseTest {
                 .statusCode(200)
                 .body(matchesJsonSchema(new File(Utils.getSchemaBasePath("booking","bookings"))));
     }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Category({AllTests.class})
+    @DisplayName("Garatir o Schema do retorno de uma reserva específica")
+    public void validaSchemaDeReservaEspecifica(){
+        int firstId = getBookingRequest.bookingReturnIds()
+                .then()
+                .statusCode(200)
+                .extract()
+                .path("[0].bookingid");
+
+        getBookingRequest.bookingReturnSpecificId(firstId)
+                .then()
+                .statusCode(200)
+                .body(matchesJsonSchema(new File(Utils.getSchemaBasePath("booking","booking"))));
+    }
 }
