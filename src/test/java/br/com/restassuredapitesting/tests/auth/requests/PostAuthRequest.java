@@ -27,4 +27,6 @@ public class PostAuthRequest {
                 .extract()
                 .path("token");
     }
+
+
 }
