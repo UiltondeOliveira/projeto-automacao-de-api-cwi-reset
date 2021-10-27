@@ -3,6 +3,7 @@ package br.com.restassuredapitesting.tests.booking.tests;
 import br.com.restassuredapitesting.base.BaseTest;
 import br.com.restassuredapitesting.suites.AcceptanceTests;
 import br.com.restassuredapitesting.suites.AllTests;
+import br.com.restassuredapitesting.suites.E2eTests;
 import br.com.restassuredapitesting.tests.auth.requests.PostAuthRequest;
 import br.com.restassuredapitesting.tests.booking.requests.DeleteBookingRequest;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
@@ -34,6 +35,17 @@ public class DeleteBookingTest extends BaseTest {
         deleteBookingRequest.deleteBookingToken(firstId, postAuthRequest.getToken())
                 .then()
                 .statusCode(201);
+    }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Category({AllTests.class, E2eTests.class})
+    @DisplayName("Tenta Deletar uma reserva que não exite")
+    public void validarExclusaoDeUmaReservaInexistente(){
+        int id = 999;
+        deleteBookingRequest.deleteBookingToken(id, postAuthRequest.getToken())
+                .then()
+                .statusCode(405);
     }
 
 }
