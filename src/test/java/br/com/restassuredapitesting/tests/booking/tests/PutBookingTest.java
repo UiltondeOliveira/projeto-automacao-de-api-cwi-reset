@@ -1,9 +1,7 @@
 package br.com.restassuredapitesting.tests.booking.tests;
 
 import br.com.restassuredapitesting.base.BaseTest;
-import br.com.restassuredapitesting.suites.AcceptanceTests;
-import br.com.restassuredapitesting.suites.AllTests;
-import br.com.restassuredapitesting.suites.E2eTests;
+import br.com.restassuredapitesting.suites.*;
 import br.com.restassuredapitesting.tests.auth.requests.PostAuthRequest;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
 import br.com.restassuredapitesting.tests.booking.requests.PutBookingRequest;
@@ -25,7 +23,7 @@ public class PutBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     @DisplayName("Alterar uma reserva somento utilizando token")
     public void updateBookingWithToken(){
         int primeiroId = getBookingRequest.bookingReturnIds()
@@ -43,7 +41,7 @@ public class PutBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     @DisplayName("Alterar uma reserva somento utilizando Basic Auth")
     public void updateBookingWithBasicAuth(){
         int firstId = getBookingRequest.bookingReturnIds()
@@ -61,7 +59,7 @@ public class PutBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class, E2eTests.class})
+    @Category({AllTests.class, E2eTests.class, SecurityTests.class})
     @DisplayName("Alterar uma reserva com token não enviado")
     public void updateBookingWithoutSendedToken(){
         int firstId = getBookingRequest.bookingReturnIds()
@@ -77,8 +75,8 @@ public class PutBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class, E2eTests.class})
-    @DisplayName("Alterar uma reserva somento utilizando token")
+    @Category({AllTests.class, E2eTests.class, SecurityTests.class})
+    @DisplayName("Alterar uma reserva com token inválido")
     public void updateBookingWithTokenSendInvalidly(){
         int firstId = getBookingRequest.bookingReturnIds()
                 .then()

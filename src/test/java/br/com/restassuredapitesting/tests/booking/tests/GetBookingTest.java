@@ -1,10 +1,7 @@
 package br.com.restassuredapitesting.tests.booking.tests;
 
 import br.com.restassuredapitesting.base.BaseTest;
-import br.com.restassuredapitesting.suites.AcceptanceTests;
-import br.com.restassuredapitesting.suites.AllTests;
-import br.com.restassuredapitesting.suites.ContractTests;
-import br.com.restassuredapitesting.suites.E2eTests;
+import br.com.restassuredapitesting.suites.*;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
 import br.com.restassuredapitesting.utils.Utils;
 import io.qameta.allure.Feature;
@@ -26,7 +23,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     @DisplayName("Listar Ids de reservas")
     public void validaListagemDeIdsDasReservas(){
         getBookingRequest.bookingReturnIds()
@@ -37,7 +34,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SecurityTests.class, SmokeTests.class})
     public void validaReservaEspecifica(){
         int firstId = getBookingRequest.bookingReturnIds()
                 .then()
@@ -53,7 +50,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
-    @Category({AllTests.class, ContractTests.class})
+    @Category({AllTests.class, SchemaTests.class})
     @DisplayName("Garantir o Schema de retorno da listagem de reservas")
     public void validaSchemaDaListagemDeReservas(){
         getBookingRequest.bookingReturnIds()
@@ -64,7 +61,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Category({AllTests.class})
+    @Category({AllTests.class, SchemaTests.class})
     @DisplayName("Garatir o Schema do retorno de uma reserva específica")
     public void validaSchemaDeReservaEspecifica(){
         int firstId = getBookingRequest.bookingReturnIds()
@@ -81,7 +78,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     public void validaListagemDeReservasComFiltroFirstname(){
         String firstName = "James";
 
@@ -93,7 +90,7 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     public void validaListagemDeReservasComFiltroLastname(){
         String lastName = "Brown";
 
@@ -105,9 +102,9 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     public void validaListagemDeReservasComFiltroCheckin(){
-        String dateCheckin = "2021-04-14";
+        String dateCheckin = "2019-01-01";
         getBookingRequest.bookingListReturnIdsFilteredCheckin(dateCheckin)
                 .then()
                 .statusCode(200)
@@ -116,9 +113,9 @@ public class GetBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     public void validaListagemDeReservasComFiltroCheckout(){
-        String dateCheckout = "2021-05-14";
+        String dateCheckout = "2019-01-01";
         getBookingRequest.bookingListReturnIdsFilteredCheckout(dateCheckout)
                 .then()
                 .statusCode(200)
@@ -126,18 +123,17 @@ public class GetBookingTest extends BaseTest {
     }
 
     @Test
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Category({AllTests.class, AcceptanceTests.class})
     public void validaListagemDeReservasComFiltrosPorCheckoutECheckout(){
         String dateCheckout = "2019-01-01";
         getBookingRequest.bookingListReturnIdsFilteredByCheckoutAndCheckout(dateCheckout)
                 .then()
-                .statusCode(200)
-                .body("size()",greaterThan(0));
+                .statusCode(500);
     }
 
     @Test
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.CRITICAL)
     @Category({AllTests.class, AcceptanceTests.class})
     public void validaListagemDeReservasComFiltrosPorNomeECheckinECheckout(){
         String name = "James";

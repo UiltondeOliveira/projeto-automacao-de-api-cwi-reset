@@ -4,6 +4,7 @@ import br.com.restassuredapitesting.base.BaseTest;
 import br.com.restassuredapitesting.suites.AcceptanceTests;
 import br.com.restassuredapitesting.suites.AllTests;
 import br.com.restassuredapitesting.suites.E2eTests;
+import br.com.restassuredapitesting.suites.SmokeTests;
 import br.com.restassuredapitesting.tests.booking.requests.PostBookingRequest;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
@@ -19,7 +20,7 @@ public class PostBookingTest extends BaseTest {
     PostBookingRequest postBookingRequest = new PostBookingRequest();
 
     @Test
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Criar uma nova reserva")
     public void validarCriacaoDeUmaNovaReserva(){

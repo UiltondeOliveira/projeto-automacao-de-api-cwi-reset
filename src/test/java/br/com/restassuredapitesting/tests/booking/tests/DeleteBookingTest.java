@@ -1,9 +1,7 @@
 package br.com.restassuredapitesting.tests.booking.tests;
 
 import br.com.restassuredapitesting.base.BaseTest;
-import br.com.restassuredapitesting.suites.AcceptanceTests;
-import br.com.restassuredapitesting.suites.AllTests;
-import br.com.restassuredapitesting.suites.E2eTests;
+import br.com.restassuredapitesting.suites.*;
 import br.com.restassuredapitesting.tests.auth.requests.PostAuthRequest;
 import br.com.restassuredapitesting.tests.booking.requests.DeleteBookingRequest;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
@@ -23,7 +21,7 @@ public class DeleteBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Category({AllTests.class, AcceptanceTests.class})
+    @Category({AllTests.class, AcceptanceTests.class, SmokeTests.class})
     @DisplayName("Deleta uma reserva somento utilizando token")
     public void deleteExistingBookingWhithToken(){
         int firstId = getBookingRequest.bookingReturnIds()
@@ -50,7 +48,7 @@ public class DeleteBookingTest extends BaseTest {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Category({AllTests.class, E2eTests.class})
+    @Category({AllTests.class, E2eTests.class,SecurityTests.class})
     @DisplayName("Tenta excluir uma reserva sem autorização")
     public void deleteExistingBookingWhithoutAuthorization(){
         int firstId = getBookingRequest.bookingReturnIds()
