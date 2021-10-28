@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class PutBookingRequest {
     BookingPayloads bookingPayloads = new BookingPayloads();
 
-@Step("Atualiza uma reserva específica utilizando o parâmetro token")
+@Step("Atualização uma reserva utilizando o parâmetro token")
     public Response updateBookingToken(int id, String token){
         return given()
                 .header("Content-Type","application/json")
@@ -22,7 +22,7 @@ public class PutBookingRequest {
     }
 
 
-@Step("Atualiza uma reserva específica utilizando o parâmetro Basic Auth")
+@Step("Atualização de uma reserva utilizando o parâmetro Basic Auth")
     public Response updateBookingBasicAuth(int id){
 
     String credentials = "admin:password123";
@@ -37,6 +37,32 @@ public class PutBookingRequest {
             .body(bookingPayloads.payloadValidBooking().toString())
             .put("booking/"+ id);
 }
+
+    @Step("Atualização de uma reserva quando o parâmetro token não for enviado")
+    public Response updateBookingWithoutSendedToken(int id){
+        return given()
+                .header("Content-Type","application/json")
+                .header("Accept","application/json")
+                .header("Cookie","")
+                .when()
+                .body(bookingPayloads.payloadValidBooking().toString())
+                .put("booking/"+ id);
+    }
+
+
+    @Step("Atualização de uma reserva específica utilizando token inválido")
+    public Response updateBookingWithTokenSendInvalidly(int id){
+        return given()
+                .header("Content-Type","application/json")
+                .header("Accept","application/json")
+                .header("Cookie","abc123")
+                .when()
+                .body(bookingPayloads.payloadValidBooking().toString())
+                .put("booking/"+ id);
+    }
+
+
+
 
 
 }

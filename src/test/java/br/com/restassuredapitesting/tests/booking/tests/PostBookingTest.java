@@ -25,7 +25,6 @@ public class PostBookingTest extends BaseTest {
     public void validarCriacaoDeUmaNovaReserva(){
         postBookingRequest.createBooking()
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
     }
@@ -37,7 +36,6 @@ public class PostBookingTest extends BaseTest {
     public void validarCriacaoDeUmaNovaReservaComPayloadInvalido(){
         postBookingRequest.createBookingWithInvalidPayload()
                 .then()
-                .log().all()
                 .statusCode(500);
     }
 
@@ -59,7 +57,6 @@ public class PostBookingTest extends BaseTest {
     public void validarCriacaoDeUmaNovaReservaComMaisParametrosNoPayload(){
         postBookingRequest.createBookingWhithMoreParameters()
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
     }
@@ -72,7 +69,6 @@ public class PostBookingTest extends BaseTest {
     public void validarCriacaoDeUmaNovaReservaComHeaderAcceptInvalido(){
         postBookingRequest.createBookingWithInvalidHeaderAccept()
                 .then()
-                .log().all()
                 .statusCode(418);
     }
 

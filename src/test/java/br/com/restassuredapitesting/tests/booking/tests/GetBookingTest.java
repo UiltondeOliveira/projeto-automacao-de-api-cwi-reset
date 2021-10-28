@@ -4,6 +4,7 @@ import br.com.restassuredapitesting.base.BaseTest;
 import br.com.restassuredapitesting.suites.AcceptanceTests;
 import br.com.restassuredapitesting.suites.AllTests;
 import br.com.restassuredapitesting.suites.ContractTests;
+import br.com.restassuredapitesting.suites.E2eTests;
 import br.com.restassuredapitesting.tests.booking.requests.GetBookingRequest;
 import br.com.restassuredapitesting.utils.Utils;
 import io.qameta.allure.Feature;
@@ -88,7 +89,6 @@ public class GetBookingTest extends BaseTest {
                 .then()
                 .statusCode(200)
                 .body("size()", greaterThan(0));
-
     }
 
     @Test
@@ -110,7 +110,6 @@ public class GetBookingTest extends BaseTest {
         String dateCheckin = "2021-04-14";
         getBookingRequest.bookingListReturnIdsFilteredCheckin(dateCheckin)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
     }
@@ -122,7 +121,6 @@ public class GetBookingTest extends BaseTest {
         String dateCheckout = "2021-05-14";
         getBookingRequest.bookingListReturnIdsFilteredCheckout(dateCheckout)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
     }
@@ -134,7 +132,6 @@ public class GetBookingTest extends BaseTest {
         String dateCheckout = "2019-01-01";
         getBookingRequest.bookingListReturnIdsFilteredByCheckoutAndCheckout(dateCheckout)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
     }
@@ -148,9 +145,21 @@ public class GetBookingTest extends BaseTest {
         String dateCheckout = "2019-01-01";
         getBookingRequest.bookingListReturnIdsFilteredByNameAndCheckinAndCheckout(name, dateCheckin, dateCheckout)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("size()",greaterThan(0));
+    }
+
+
+    @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Category({AllTests.class, E2eTests.class})
+    public void validaErro500AoUtilizarFiltroMalFormatado(){
+
+        String firstName = "James";
+
+        getBookingRequest.returnError500WhenSendingPoorlyFormattedFilter(firstName)
+                .then()
+                .statusCode(500);
     }
 
 

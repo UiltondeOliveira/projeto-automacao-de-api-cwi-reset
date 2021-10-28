@@ -9,7 +9,6 @@ import org.junit.runners.Suite;
 @Categories.IncludeCategory(br.com.restassuredapitesting.suites.E2eTests.class)
 @Suite.SuiteClasses({
         PostBookingTest.class
-
 })
 public class E2eTests {
 }

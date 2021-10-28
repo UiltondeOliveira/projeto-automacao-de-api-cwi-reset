@@ -25,7 +25,7 @@ public class DeleteBookingTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Category({AllTests.class, AcceptanceTests.class})
     @DisplayName("Deleta uma reserva somento utilizando token")
-    public void validarExclusaoDeUmaReservaUtilizandoToken(){
+    public void deleteExistingBookingWhithToken(){
         int firstId = getBookingRequest.bookingReturnIds()
                 .then()
                 .statusCode(200)
@@ -41,8 +41,8 @@ public class DeleteBookingTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Category({AllTests.class, E2eTests.class})
     @DisplayName("Tenta excluir uma reserva que não exite")
-    public void validarExclusaoDeUmaReservaInexistente(){
-        int id = 999;
+    public void deleteNonExistingBooking(){
+        int id = 999999;
         deleteBookingRequest.deleteBookingToken(id, postAuthRequest.getToken())
                 .then()
                 .statusCode(405);
@@ -51,8 +51,8 @@ public class DeleteBookingTest extends BaseTest {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Category({AllTests.class, E2eTests.class})
-    @DisplayName("Tenta excluir uma reserva que não exite")
-    public void validarExclusaoDeUmaReservaSemAutorizacao(){
+    @DisplayName("Tenta excluir uma reserva sem autorização")
+    public void deleteExistingBookingWhithoutAuthorization(){
         int firstId = getBookingRequest.bookingReturnIds()
                 .then()
                 .statusCode(200)
@@ -61,7 +61,6 @@ public class DeleteBookingTest extends BaseTest {
 
         deleteBookingRequest.deleteBookingWithoutToken(firstId)
                 .then()
-                .log().all()
                 .statusCode(403);
     }
 
