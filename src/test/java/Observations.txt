@@ -1,0 +1,9 @@
+Observações relacionadas aos teste:
+
+No teste filtrado por nome, checkin e checkout, o campo nome não existe e mesmo assim ele retorna resultado positivo,
+no meu ponto de vista isto não está correto, deveria retorar um 404.
+No teste erro de servidor 500 filtro mal formatado, independente do filtro que é feito, ele retorna 200.
+No teste validar mais de uma criação em sequencia, não interessante que retone 200, pois se um usuário mal intencionado
+cricar um laço infinito, isto derrubará o servidor.
+
+
